@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "Arduino Pro Micro")(type "KiCad")(uri "C:/Users/Alex/Documents/Repositories/Brutalist-MIDI-Mixer/PCB/libraries/ProMicroKiCad-master/promicro.pretty")(options "")(descr ""))
+)
