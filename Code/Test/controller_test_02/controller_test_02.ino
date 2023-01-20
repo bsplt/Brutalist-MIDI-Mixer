@@ -15,30 +15,14 @@ void setup() {
 
 void loop() {
   Wire.requestFrom(42, 8, false);
-
-  Serial.println("---");
+  Serial.print("\tR:\t");
 
   while (Wire.available()) {
     char c = Wire.read();
-    Serial.print(c);
+    Serial.print(String(int(c) - 63) + "\t");
   }
 
   Serial.print("\n");
-
-  /*
-  Serial.println("---");
-  setChannel(13);
-  Serial.println(analogRead(INPUTS[2]));
-  setChannel(0);
-  Serial.println(analogRead(INPUTS[0]));
-  */
-
-  int OLD_VALUES[14][4];
-  for (int i = 0; i < 14; i++) {
-    for (int j = 0; j < 4; j++) {
-      OLD_VALUES[i][j] = VALUES[i][j];
-    }
-  }
 
   for (int i = 0; i < 14; i++) {
     setChannel(i);
@@ -49,26 +33,14 @@ void loop() {
     }
   }
 
-  /*
-  for (int i = 0; i < 14; i++) {
-    for (int j = 0; j < 4; j++) {
-      if (OLD_VALUES[i][j] != VALUES[i][j]) {
-        Serial.println("Change: " + String(i) + ", " + String(j) + ": " + String(VALUES[i][j]));
-      }
-    }
-  }
-*/
-
-  Serial.println(" ");
   for (int j = 0; j < 4; j++) {
-    Serial.print(String(j) + ": ");
+    Serial.print("\t" + String(j) + ":\t");
     for (int i = 0; i < 14; i++) {
       Serial.print(String(VALUES[i][j]) + "\t");
     }
     Serial.print("\n");
   }
-  Serial.println(" ");
-  Serial.println(" ");
+  Serial.print("\n\n");
   delay(500);
 }
 

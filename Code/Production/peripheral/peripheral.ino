@@ -3,8 +3,8 @@
 
 #define E0_0 16
 #define E0_1 17
-#define E1_0 2
-#define E1_1 3
+#define E1_0 3
+#define E1_1 4
 #define E2_0 14
 #define E2_1 15
 #define E3_0 5
@@ -29,6 +29,23 @@ RotaryEncoder *e7 = nullptr;
 
 void setup()
 {
+  pinMode(E0_0, INPUT);
+  pinMode(E0_1, INPUT);
+  pinMode(E1_0, INPUT);
+  pinMode(E1_1, INPUT);
+  pinMode(E2_0, INPUT);
+  pinMode(E2_1, INPUT);
+  pinMode(E3_0, INPUT);
+  pinMode(E3_1, INPUT);
+  pinMode(E4_0, INPUT);
+  pinMode(E4_1, INPUT);
+  pinMode(E5_0, INPUT);
+  pinMode(E5_1, INPUT);
+  pinMode(E6_0, INPUT);
+  pinMode(E6_1, INPUT);
+  pinMode(E7_0, INPUT);
+  pinMode(E7_1, INPUT);
+
   Wire.begin(42);
   Wire.onRequest(requestEvent);
 
