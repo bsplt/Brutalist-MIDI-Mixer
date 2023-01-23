@@ -106,9 +106,9 @@ void loop() {
 
       if (MASK[i][j] == 2) {
         int value = 127;
-        if (VALUES[i][j] >= CROP && VALUES[i][j] < 511 - SNAP) value = map(VALUES[i][j], CROP, 511 - SNAP, 127, 64);
-        if (VALUES[i][j] > 511 + SNAP && VALUES[i][j] <= 1023 - CROP) value = map(VALUES[i][j], 511 + SNAP, 1023 - CROP, 62, 0);
-        if (VALUES[i][j] >= 511 - SNAP && VALUES[i][j] <= 511 + SNAP) value = 63;
+        if (VALUES[i][j] >= CROP && VALUES[i][j] < 511 - SNAP) value = map(VALUES[i][j], CROP, 511 - SNAP, 127, 65);
+        if (VALUES[i][j] > 511 + SNAP && VALUES[i][j] <= 1023 - CROP) value = map(VALUES[i][j], 511 + SNAP, 1023 - CROP, 63, 0);
+        if (VALUES[i][j] >= 511 - SNAP && VALUES[i][j] <= 511 + SNAP) value = 64;
         if (VALUES[i][j] > 1023 - CROP) value = 0;
         if (value == MIDI[i][j]) continue;
         controlChange(0, control, value);
