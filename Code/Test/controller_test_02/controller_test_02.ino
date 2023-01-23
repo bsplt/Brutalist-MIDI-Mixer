@@ -39,6 +39,8 @@ void loop() {
 
   Serial.print("\n");
 
+  delay(10);
+
   for (int i = 0; i < 16; i++) {
     setChannel(i);
     for (int j = 0; j < 4; j++) {
@@ -59,7 +61,11 @@ void loop() {
     Serial.print("\n");
   }
   Serial.print("\n\n");
-  delay(500);
+
+  for (int i = 0; i < 4; i++) {
+    digitalWrite(LEDS[i], LOW);
+  }
+  delay(50);
 }
 
 void setChannel(int channel) {
